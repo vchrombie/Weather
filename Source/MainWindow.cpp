@@ -33,6 +33,7 @@ BMenuBar*
 MainWindow::_PrepareMenuBar(void)
 {
 	BMenuBar *menubar = new BMenuBar("menu");
+	
 	BMenu *menu = new BMenu(B_TRANSLATE("Edit"));
 	menu->AddItem(new BMenuItem(B_TRANSLATE("Change location" B_UTF8_ELLIPSIS),
 		new BMessage(kCitySelectionMessage),'L'));
@@ -50,6 +51,8 @@ MainWindow::_PrepareMenuBar(void)
 	menu->AddItem(new BMenuItem(B_TRANSLATE("Refresh"),
 		new BMessage(kUpdateMessage), 'R'));
 	menubar->AddItem(menu);
+
+	menu = new BMenu(B_TRANSLATE("About"));
 
 	return menubar;
 }
